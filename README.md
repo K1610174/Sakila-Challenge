@@ -12,7 +12,7 @@
 10.
 11. SELECT DISTINCT last_name FROM actor;
 12. SELECT last_name, COUNT(last_name) FROM actor GROUP BY last_name HAVING COUNT(last_name) > 1;
-13.
+13. SELECT count(film_actor.actor_id), actor.first_name, actor.last_name FROM actor INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id GROUP BY film_actor.act or_id ORDER BY count(film_actor.actor_id) DESC LIMIT 1;
 14.
 15.
 16. SELECT AVG(length) FROM film;
