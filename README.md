@@ -29,3 +29,5 @@
 26. SELECT first_name, last_name FROM actor WHERE last_name LIKE '%son' ORDER BY first_name;
 27. SELECT c.name,COUNT(f.film_id) FROM category c JOIN film_category fc ON c.category_id=fc.category_id JOIN film f ON f.film_id=fc.film_id GROUP BY c.name;
 28. SELECT a.first_name,a.last_name, COUNT(f.film_id) FROM actor a JOIN film_actor fa ON a.actor_id=fa.actor_id JOIN film f ON f.film_id=fa.film_id GROUP BY a.first_name,a.last_name;
+29. SELECT count(film_actor.actor_id), actor.first_name, actor.last_name  FROM actor INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id GROUP BY film_actor.act
+or_id ORDER BY count(film_actor.actor_id) DESC LIMIT 1;
